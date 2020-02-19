@@ -1,1 +1,1 @@
-# IS 322-102: Project1
+# IS 322-102: Project 1
