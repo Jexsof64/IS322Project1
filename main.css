@@ -25,7 +25,7 @@ html, body {
 	/* To make sure it's centered in the middle */
 	margin: auto;
 
-	/* Will be important for media queries [WATCH THE REVIEW OF CSS] */
+	/* Important for media queries */
 	display: flex;
 
 	/* Gets the side bar to be the full height of the page */
@@ -175,4 +175,20 @@ html, body {
 		height: 50px;
 		flex-basis: 100%;
 	}
+}
+
+/*
+ * From main.css for Advanced JavaScript
+ */
+.filter-wrapper {
+	display: flex;
+	margin: 15px 0;
+}
+
+#results-table {
+	width: 100%;
+}
+
+#results-table td, #results-table th {
+	padding: 5px;
 }

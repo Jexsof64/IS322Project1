@@ -1,12 +1,14 @@
 <!DOCTYPE>
 <html>
 	<head>
+		<title>Untouchable | Products</title>
 		<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
 	<body>
+<!--
 		<div class="app-container">
-
-			<!-- An aside, a navigation bar -->
+		
+			<!- An aside, a navigation bar ->
 			<aside class="navigation">
 				<a href="#">Link 1</a>
 				<a href="#">Link 2</a>
@@ -14,7 +16,32 @@
 				<a href="#">Link 4</a>
 			</aside>
 
-			<!-- A content container containing generic content cards -->
+			<!- A content container containing generic content cards ->
+			<div class="content-container">
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+			</div>
+		</div>
+-->
+		<div class="container" id="page-wrapper">
+
+			<!-- An aside, a navigation bar -->
+			<aside class="navigation">
+				<a href="#">Untouchable</a>
+				<a href="#">Home</a>
+				<a href="#">Product List</a>
+			</aside>
+
 			<div class="content-container">
 				<div class="card"></div>
 				<div class="card"></div>
@@ -30,6 +57,60 @@
 				<div class="card"></div>
 			</div>
 
+			<div class="filter-wrapper">
+				
+				<div class="form-group">
+					<label for="orderBy">Order By</label>
+					<select id="orderBy" name="orderBy">
+						<option value="name">Name</option>
+						<option value="priceHToL">Price (Low to High)</option>
+						<option value="priceHToL">Price (High to Low)</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="published">Show Unpublished?</label>	
+					<select id="published" name="published">
+						<option value="true">True</option>
+						<option value="false">False</option>
+					</select>
+				</div>
+				
+				<div class="form-group" style="margin-right: 20px;">
+					<label for="orderBy">Order By</label>
+					<select id="orderBy" name="orderBy">
+						<option value="name">Name</option>
+						<option value="published">Published</option>
+						<option value="_id">Article ID</option>
+					</select>
+				</div>
+
+				
+
+
+			</div>
+
+			<table id="results-table" border="1">
+				<thead>
+					<tr>
+						<th>&nbsp;</th>
+						<th>Name</th>
+						<th>Article ID</th>
+						<th>Published</th>
+					</tr>
+				</thead>
+
+				<!-- Results will be added through JavaScript -->
+				<tbody></tbody>
+			</table>
+
+		<!-- Closes "page-wrapper" -->
 		</div>
+
+		<script type="text/javascript" src=productList.js"></script>
 	</body>
 </html>
+
+<!--
+	This is a multi
+--> 
