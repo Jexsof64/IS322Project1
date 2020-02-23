@@ -1,3 +1,12 @@
+/*
+ * ==================
+ * main.css
+ * ==================
+ * 
+ * Contains code derived from bnissen24's week2CSS/mediaQueries/
+ * remote GitHub repository that has been commented and altered
+ */
+
 html, body {
 	/* Set so that the application will be the width of the browser */
 	min-height: 100%; 
@@ -19,7 +28,7 @@ html, body {
 	/* Will be important for media queries [WATCH THE REVIEW OF CSS] */
 	display: flex;
 
-	/* Get the site bar to be the full height of the page */
+	/* Gets the side bar to be the full height of the page */
 	min-height: 100%;
 
 	/* J.G.: Shade of light green to match Untouchable's */
@@ -55,26 +64,73 @@ html, body {
 	color: rgb(243, 255, 232);
 }
 
+/* 
+ * In productList.html, it currently applies to all of the generic
+ * content cards
+ */
 .content-container {
+	/* 
+	 * Makes it so whatever the navbar is not taking up, will be used 
+	 * for this
+	 */
 	flex: 1 1 auto;
+
 	width: 100%;
+
+	/* Used to give a bit of border around everything */
 	margin: 10px;
 	padding: 5px;
+
+	/* 
+	 * The content container is both a child of a flex container and a
+	 * flex container itself 
+	 */
 	display: flex;
+
 	flex-wrap: wrap;
 }
 
+/* The foundation of many modern websites */
 .content-container .card {
 	height: 195px;
+
+	/* Cards will have a width of 195 pixels and will remain constant */
 	flex: 0 0 195px;
-	background-color: #bfbfbf;
-	border: 3px solid #333;
+
+	/* J.G.: Changed it to black */
+	background-color: rgb(16, 11, 7);
+
+	/* 
+	 * J.G.: Changed the border color to red and size to 5 pixels from
+	 * 3
+	 */
+	border: 5px solid rgb(152, 0, 0);
+
+	/* Spaces out the cards */
 	margin: 5px;
 }
 
+/* 
+ * MEDIA QUERIES allow one to set stylings on certain parameters 
+ *
+ * They will override stylings from the base 
+ */
+
+/* "only screen" means that there is some kind of screen and that it's
+ * not a headless browser - there is a UI
+ * 
+ * When the browser goes under one more than the number associated with 
+ * "max-width" the following set of stylings will be applied
+ */
 @media only screen and (max-width: 1199px) {
 	.app-container {
+		/* 
+		 * This will make it so that it flows from top to bottom 
+		 *
+		 * This explains why the navbar is on top
+		 */
 		flex-direction: column;
+
 		width: 900px;
 	}
 
@@ -84,10 +140,15 @@ html, body {
 	}
 
 	.navigation a {
+		/* 
+		 * This will allow them to appear side by side instead of on
+		 * top of each other
+		 */
 		display: inline-block;
 	}
 }
 
+/* Has a minimum width and maximum width to change - used for tablets*/
 @media only screen and (min-width: 750px) and (max-width: 1000px) {
 	.app-container {
 		width: 720px;
@@ -99,6 +160,7 @@ html, body {
 	}
 }
 
+/* Will no longer use cards and be more of a list */
 @media only screen and (max-width: 749px) {
 	.app-container {
 		margin: 0 15px;
