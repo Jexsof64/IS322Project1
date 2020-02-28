@@ -5,8 +5,9 @@
  * 
  * Contains code derived from bnissen24's week2CSS/mediaQueries/
  * remote GitHub repository that has been commented and altered
+ *
+ * Contains code derived from W3Schools that has been altered
  */
-
 html, body {
 	/* Set so that the application will be the width of the browser */
 	min-height: 100%; 
@@ -16,179 +17,232 @@ html, body {
 
 	/* J.G.: Shade of dark green to match Untouchable's background */
 	background-color: rgb(17, 61, 0); 
-}
 
-.app-container {
-	/* To make a centered application, to later allow for adds */
-	width: 1024px;
-
-	/* To make sure it's centered in the middle */
-	margin: auto;
-
-	/* Important for media queries */
-	display: flex;
-
-	/* Gets the side bar to be the full height of the page */
-	min-height: 100%;
-
-	/* J.G.: Shade of light green to match Untouchable's */
-	background-color: rgb(92, 226, 2);
-}
-
-.navigation {
-	/* Will stay at 150 pixels, and won't expand or contract */
-	flex: 0 0 150px;
-
-	min-height: 100%;
-
-	/* J.G.: Just changed it to black */
-	background-color: rgb(2, 1, 0);
-}
-
-.navigation a {
-	display: block;
-	padding: 15px;
-	text-align: center;
-
-	/* J.G.: Changed it to a dark green */
-	color: rgb(17, 137, 29);
-
-	/* J.G.: Changed the font */
 	font-family: "Arial Black", Gadget, sans-serif;
+}
 
+ul.topnav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgb(92, 226, 2);
+  	position: sticky;
+  	top: 0;
+
+}
+
+ul.topnav li {
+	float: left;
+}
+
+ul.topnav li a {
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
 	text-decoration: none;
 }
 
-.navigation a:hover {
-	/* J.G.: Changed color to a gray */
-	color: rgb(243, 255, 232);
+ul.topnav li a:hover:not(.active) {
+	background-color: rgb(243, 255, 232);
 }
 
-/* 
- * In productList.html, it currently applies to all of the generic
- * content cards
- */
-.content-container {
-	/* 
-	 * Makes it so whatever the navbar is not taking up, will be used 
-	 * for this
-	 */
-	flex: 1 1 auto;
-
-	width: 100%;
-
-	/* Used to give a bit of border around everything */
-	margin: 10px;
-	padding: 5px;
-
-	/* 
-	 * The content container is both a child of a flex container and a
-	 * flex container itself 
-	 */
-	display: flex;
-
-	flex-wrap: wrap;
+ul.topnav li a.active {
+	background-color: rgb(17, 61, 0);
 }
 
-/* The foundation of many modern websites */
-.content-container .card {
-	height: 195px;
-
-	/* Cards will have a width of 195 pixels and will remain constant */
-	flex: 0 0 195px;
-
-	/* J.G.: Changed it to black */
-	background-color: rgb(16, 11, 7);
-
-	/* 
-	 * J.G.: Changed the border color to red and size to 5 pixels from
-	 * 3
-	 */
-	border: 5px solid rgb(152, 0, 0);
-
-	/* Spaces out the cards */
-	margin: 5px;
+ul.topnav li.right {
+	float: right;
 }
 
-/* 
- * MEDIA QUERIES allow one to set stylings on certain parameters 
- *
- * They will override stylings from the base 
- */
-
-/* "only screen" means that there is some kind of screen and that it's
- * not a headless browser - there is a UI
- * 
- * When the browser goes under one more than the number associated with 
- * "max-width" the following set of stylings will be applied
- */
-@media only screen and (max-width: 1199px) {
-	.app-container {
-		/* 
-		 * This will make it so that it flows from top to bottom 
-		 *
-		 * This explains why the navbar is on top
-		 */
-		flex-direction: column;
-
-		width: 900px;
-	}
-
-	.navigation {
-		min-height: auto;
-		flex: 0 0 35px;
-	}
-
-	.navigation a {
-		/* 
-		 * This will allow them to appear side by side instead of on
-		 * top of each other
-		 */
-		display: inline-block;
-	}
-}
-
-/* Has a minimum width and maximum width to change - used for tablets*/
-@media only screen and (min-width: 750px) and (max-width: 1000px) {
-	.app-container {
-		width: 720px;
-	}
-
-	.content-container .card {
-		flex-basis: 330px;
-		height: 330px;
-	}
-}
-
-/* Will no longer use cards and be more of a list */
-@media only screen and (max-width: 749px) {
-	.app-container {
-		margin: 0 15px;
-		width: calc(100% - 30px);
-	}
-
-	.content-container {
-		width: calc(100% - 50px);
-	}
-
-	.content-container .card {
-		height: 50px;
-		flex-basis: 100%;
+@media screen and (max-width: 600px) {
+	ul.topnav li.right, 
+	ul.topnav li {
+		float: none;
 	}
 }
 
 /*
- * From main.css for Advanced JavaScript
+ * Code from main.css (of the GitHub repo)
  */
-.filter-wrapper {
-	display: flex;
-	margin: 15px 0;
+.main-container {
+	background-color: rgb(92, 226, 2);
 }
 
-#results-table {
+.main-container {
+	margin: 12px auto;
+	padding: 15px;
+}
+
+.carousel {
+	width: 100%;
+	height: 400px;
+	position: relative;
+}
+
+.carousel .slide {
+	opacity: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	-webkit-transition: all ease-in-out 1s;
+	transition: all ease-in-out 1s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.carousel .slide.active {
+	opacity: 1;
+}
+
+.carousel .slide img {
+	height: calc(100% - 63px);
 	width: 100%;
 }
 
-#results-table td, #results-table th {
-	padding: 5px;
+.carousel .slide h3 {
+	color: #bfbfbf;
+	font-weight: 700;
+	background-color: #666;
+	padding: 15px;
+	margin: 0;
+	z-index: 2;
+}
+
+.landing-body {
+	padding: 20px 12px;
+}
+
+footer {
+	padding: 15px;
+	margin: 12px -15px -15px;
+	background: rgb(2, 1, 0);;
+	color: #FFF;
+	display: flex;
+	align-items: space-around;
+}
+
+footer p {
+	flex: 1 1 auto;
+}
+
+.list-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.product-list {
+	display: flex;
+}
+
+.product-list .product-item {
+	flex: 0 0 225px;
+    height: 260px;
+	margin: 15px;
+}
+
+.product-list .product-item img {
+	width: 100%;
+	height: calc(100% - 45px);
+}
+
+.product-list .product-item .product-data {
+	display: flex;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: rgb(2, 1, 0);
+	font-weight: 700;
+	background-color: rgb(80, 215, 0);
+	padding: 10px;
+}
+
+.product-list .product-item .product-data h4 {
+	font-size: 16px;
+	margin: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+	footer {
+		flex-direction: column;
+	}
+
+	footer .text-right {
+		text-align: left !important;
+	}
+
+	.product-list .product-item {
+		flex: 0 0 315px;
+	}
+
+	.product-list {
+		flex-direction: column;
+	}
+
+	.filter-bar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.product-info {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.product-info .product-metadata {
+	flex: 1 1 auto;
+	margin-top: 40px;
+}
+
+.product-info .header-info {
+	flex: 0 0 300px;
+}
+
+.product-info .header-info #price {
+	text-align: center;
+}
+
+.product-info .header-info .btn {
+	margin: auto;
+	display: block;
+}
+
+.product-info .header-info img {
+	width: 100%;
+}
+
+@media only screen and (max-width: 760px) {
+	.product-list .product-item {
+		flex: 0 0 calc(100% - 24px);
+		display: flex;
+		flex-direction: row;
+		height: 100px;
+	}
+
+	.product-list .product-item img {
+		flex: 0 0 100px;
+	    height: 100px;
+	    width: 100px;
+	}
+
+	.product-list .product-item .product-data {
+		flex: 1 1 auto;
+    	height: 100px;
+	}
+
+	.product-info {
+		flex-direction: column;
+	}
+
+	ul.topnav li.right, 
+	ul.topnav li {
+		float: none;
 }

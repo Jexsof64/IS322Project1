@@ -2,115 +2,81 @@
 <html>
 	<head>
 		<title>Untouchable | Products</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="main.css">
+
 	</head>
-	<body>
-<!--
-		<div class="app-container">
-		
-			<!- An aside, a navigation bar ->
-			<aside class="navigation">
-				<a href="#">Link 1</a>
-				<a href="#">Link 2</a>
-				<a href="#">Link 3</a>
-				<a href="#">Link 4</a>
-			</aside>
+	<body> 
+		<ul class="topnav">
+			<li><a class="active" href="#home">UNTOUCHABLE</a></li>
+			<li><a href="#productList">PRODUCT LIST</a></li>
+		</ul>
 
-			<!- A content container containing generic content cards ->
-			<div class="content-container">
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-			</div>
-		</div>
--->
-		<div class="container" id="page-wrapper">
+		<div class="container main-container">
 
-			<!-- An aside, a navigation bar -->
-			<aside class="navigation">
-				<a href="#">Untouchable</a>
-				<a href="#">Home</a>
-				<a href="#">Product List</a>
-			</aside>
+			<div class="product-list">
 
-			<div class="content-container">
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-				<div class="card"></div>
-			</div>
+				<aside class="filter-bar">
 
-			<div class="filter-wrapper">
-				
-				<div class="form-group">
-					<label for="orderBy">Order By</label>
-					<select id="orderBy" name="orderBy">
-						<option value="name">Name</option>
-						<option value="priceHToL">Price (Low to High)</option>
-						<option value="priceHToL">Price (High to Low)</option>
-					</select>
+					<div class="form-group">
+						<label for="orderBy">Sort By:</label>
+						<select id="orderBy" name="orderBy">
+							<option value="">Select Sorting Value</option>
+							<option value="name">Name (A to Z)</option>
+							<option value="price">Price (Low to High)</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="priceRange">Price Range:</label>
+						<select id="priceRange" name="priceRange">
+							<option value="">Select Price Range</option>
+							<option value="veryCheap">1 Yen - 10000 Yen</option>
+							<option value="cheap">10001 Yen - 20000 Yen</option>
+							<option value="meduium">20001 Yen - 30000 Yen</option> 
+							<option value="expensive">30001 Yen - 40000 Yen</option>
+							<option value="veryExpensive">40001 Yen+</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="type">Type:</label>
+						<select id="type" name="type">
+							<option value="">Select Type</option>
+							<option value="melee">Melee Weapons</option>
+							<option value="ranged">Ranged Weapons</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="category">Category</label>
+						<select id="category" name="category">
+							<option value="">Select Category</option>
+							<option value="knife">Knives</option>
+							<option value="bludgeon">Bludgeons</option>
+							<option value="pistol">Pistols</option>
+							<option value="shotgun">Shotguns</option>
+						</select>
+					</div>
+
+			
+
+				</aside>
+
+				<div class="list-container">
+					
 				</div>
-
-				<div class="form-group">
-					<label for="published">Show Unpublished?</label>	
-					<select id="published" name="published">
-						<option value="true">True</option>
-						<option value="false">False</option>
-					</select>
-				</div>
-				
-				<div class="form-group" style="margin-right: 20px;">
-					<label for="orderBy">Order By</label>
-					<select id="orderBy" name="orderBy">
-						<option value="name">Name</option>
-						<option value="published">Published</option>
-						<option value="_id">Article ID</option>
-					</select>
-				</div>
-
-				
-
 
 			</div>
 
-			<table id="results-table" border="1">
-				<thead>
-					<tr>
-						<th>&nbsp;</th>
-						<th>Name</th>
-						<th>Article ID</th>
-						<th>Published</th>
-					</tr>
-				</thead>
+			<footer>
+				<p>Untouchable, LLC</p>
+				<p>+81 5-1337-0417</p>
+				<p class="text-right">420 Central Street<br> Shibuya City, Tokyo, Japan <br> 150-0000
+			</footer>
 
-				<!-- Results will be added through JavaScript -->
-				<tbody></tbody>
-			</table>
-
-		<!-- Closes "page-wrapper" -->
 		</div>
 
-		<script type="text/javascript" src=productList.js"></script>
+		<script type="text/javascript" src="productList.js"></script>
 	</body>
 </html>
-
-<!--
-	This is a multi
---> 
