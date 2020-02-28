@@ -339,7 +339,7 @@
 		max = Math.floor(max);
 		return Math.floor(Math.random() * (max-min)) + min;
 	}
-	var randomInt = getRandomInt(1, 8);
+	var randomInt = getRandomInt(1, 30);
 	var product = mockDatabase[randomInt];
 
 	document.querySelector('#productPageTitle').innerHTML = 'Untouchable | ' + product.name;
