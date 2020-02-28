@@ -63,6 +63,10 @@ ul.topnav li.right {
 	}
 }
 
+ul.productDetails {
+	list-style-type: none;
+}
+
 /*
  * Code from main.css (of the GitHub repo)
  */
